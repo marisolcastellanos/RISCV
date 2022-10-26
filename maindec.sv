@@ -14,7 +14,8 @@ module maindec(input  logic [6:0] op,
   always_comb
     case(op)
     // RegWrite_ImmSrc_ALUSrc_MemWrite_ResultSrc_Branch_ALUOp_Jump
-      7'b0000011: controls =  // lw
+      7'b0000011: controls = RegWrite 1 _ImmSrc 00 _ALUSrc a0 b1 _MemWrite 0 _ResultSrc 01 _Branch 0_ALUOp 00 _Jump 0 // lw
+                             {1,00,0,1,0,01,0,00,0}
       7'b0100011: controls =  // sw
       7'b0110011: controls =  // R-type 
       7'b1100011: controls =  // beq
