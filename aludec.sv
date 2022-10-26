@@ -10,6 +10,28 @@ module aludec(input  logic       opb5,
   always_comb
     case(ALUOp)
      // add the logic here 
+      2'b00: 
+        
+        
+      2'b01:
+        
+        
+      2'b10:    
+        case(funct3) 
+          3'b010: 
+            
+          3'b110: 
+            
+            
+          3'b111: 
+            
+            
+          3'b000: 
+            case(opb5||funct7b5)
+              2'b11: 
+                
+              
+          
             
     endcase
 endmodule
