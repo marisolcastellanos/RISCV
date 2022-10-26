@@ -14,7 +14,12 @@ module alu(input  logic [31:0] a, b,
 
   always_comb
     case (alucontrol)
-      //
+      3'b000: result=sum; 
+      3'b001: result=sum; 
+      3'b101: result=sum[31]^v;
+      3'b011: result=a|b;
+      3'b010: result=a&b;
+      default: result=32'bx;
     endcase
 
   assign zero //
