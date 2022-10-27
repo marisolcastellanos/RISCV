@@ -22,7 +22,7 @@ module alu(input  logic [31:0] a, b,
       default: result=32'bx;
     endcase
 
-  assign zero //
+  assign zero = (result == 0) ? 1 : 0;
   assign v = ~(alucontrol[0] ^ a[31] ^ b[31]) & (a[31] ^ sum[31]) & isAddSub;
   
 endmodule
