@@ -18,8 +18,8 @@ module maindec(input  logic [6:0] op,
       7'b0100011: controls =  11'b00111xx000x;// sw
       7'b0110011: controls =  11'b1xx00000100;// R-type 
       7'b1100011: controls =  11'b01000xx1010;// beq
-      7'b0010011: controls =  11'b10000000100;// I-type ALU
+      7'b0010011: controls =  11'b10010000100;// I-type ALU
       7'b1101111: controls =  11'b111x0100xx1;// jal
-      default:    controls =  // non-implemented instruction
+      default:    controls =  11'bxxxxxxxxxxx;  // non-implemented instruction
     endcase
 endmodule
