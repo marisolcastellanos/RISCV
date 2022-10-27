@@ -10,25 +10,26 @@ module aludec(input  logic       opb5,
   always_comb
     case(ALUOp)
      // add the logic here 
-      2'b00: ALUControl = 3'b000 //add
+      2'b00: ALUControl = 3'b000; //add
         
         
-      2'b01: ALUControl = 3'b001 //subtract
+      2'b01: ALUControl = 3'b001; //subtract
         
         
-      default : case(funct3)
+      2'b10: case(funct3)
         3'b000: if(RtypeSub == 2'b11) ALUControl = 3'b000
                   else ALUControl = 3'b001
           
             
-        3'b010: ALUControl = 3'b101 //SLT 
+        3'b010: ALUControl = 3'b101; //SLT 
             
             
-        3'b110: ALUControl = 3'b011 //OR 
+        3'b110: ALUControl = 3'b011; //OR 
             
             
-        3'b111: ALUControl = 3'b010 //AND
+        3'b111: ALUControl = 3'b010; //AND
            
-        default: ALUControl= 3'bxxx  
+        default: ALUControl= 3'bxxx;  
+        endcase
     endcase
 endmodule
