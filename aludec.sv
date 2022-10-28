@@ -12,22 +12,26 @@ module aludec(input  logic       opb5,
      // add the logic here 
       2'b00: ALUControl = 3'b000; //add
         
-        
       2'b01: ALUControl = 3'b001; //subtract
-        
-        
-      2'b10: case(funct3)
-        3'b000: if({opb5,funct7b5} == 2'b11) ALUControl = 3'b001
-                  else ALUControl = 3'b000
           
-            
-        3'b010: ALUControl = 3'b101; //SLT 
-            
+      2'b10: case(funct3)
+        
+        3'b010: ALUControl = 3'b101; //SLT      
             
         3'b110: ALUControl = 3'b011; //OR 
             
-            
         3'b111: ALUControl = 3'b010; //AND
+       
+        3'b000: case({opb5,funct7b5}) 
+          2'b11: ALUControl = 3'b001
+          
+          2'b00: ALUControl = 3'b000
+                              
+          2'b01: ALUControl = 3'b000
+                              
+          2'b10: ALUControl = 3'b000
+                              
+          endcase
            
         default: ALUControl= 3'bxxx;  
         endcase
