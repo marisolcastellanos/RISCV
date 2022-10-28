@@ -17,8 +17,8 @@ module aludec(input  logic       opb5,
         
         
       2'b10: case(funct3)
-        3'b000: if(RtypeSub == 2'b11) ALUControl = 3'b000
-                  else ALUControl = 3'b001
+        3'b000: if({opb5,funct7b5} == 2'b11) ALUControl = 3'b001
+                  else ALUControl = 3'b000
           
             
         3'b010: ALUControl = 3'b101; //SLT 
