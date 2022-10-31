@@ -23,13 +23,13 @@ module aludec(input  logic       opb5,
         3'b111: ALUControl = 3'b010; //AND
        
         3'b000: case({opb5,funct7b5}) 
-          2'b11: ALUControl = 3'b001
+          2'b11: ALUControl = 3'b001;
           
-          2'b00: ALUControl = 3'b000
+          2'b00: ALUControl = 3'b000;
                               
-          2'b01: ALUControl = 3'b000
+          2'b01: ALUControl = 3'b000;
                               
-          2'b10: ALUControl = 3'b000
+          2'b10: ALUControl = 3'b000;
                               
           endcase
            
