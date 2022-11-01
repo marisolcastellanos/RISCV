@@ -13,16 +13,5 @@ module mux3 #(parameter WIDTH = 8)
               input  logic [1:0]       s, 
               output logic [WIDTH-1:0] y);
 
-  //assign statement 
-initial
-begin
-	if(s[1]&&!s[0])
-		y = d1;
-	else if(!s[1]&&s[0])
-		y = d2;
-	else
-		y = d0;
-end
-
-  
+  assign y = s[1] ? d2 : (s[0] ? d1 : d0); 
 endmodule
